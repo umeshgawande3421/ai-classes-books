@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Classes | Maharashtra State Board Books</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #0a0f1e;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0a0f1e 0%, #1a1f35 100%);
+        }
+
+        .particles::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Header with Neon Effect */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            background: rgba(10, 15, 30, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 30px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, rgba(0, 255, 255, 0.3), transparent 30%);
+            animation: rotate 10s linear infinite;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: #0a0f1e;
+            border-radius: 28px;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        .header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5em;
+            font-weight: 800;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            2%, 64% { transform: skew(2deg, 1deg); }
+            4%, 60% { transform: skew(-2px, -1px); }
+            62% { transform: skew(0); }
+        }
+
+        .header h2 {
+            font-size: 1.5em;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+            margin-bottom: 20px;
+        }
+
+        .owner-badge {
+            display: inline-block;
+            padding: 12px 40px;
+            background: rgba(255, 0, 255, 0.1);
+            border: 2px solid #ff00ff;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 0, 255, 0.6); }
+        }
+
+        /* Class Grid with 3D Cards */
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+            perspective: 1000px;
+        }
+
+        .class-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 20px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .class-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+
+        .class-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            border-color: transparent;
+        }
+
+        .class-card:hover::before {
+            opacity: 0.3;
+        }
+
+        .class-card.active {
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 30px #00ffff;
+            transform: scale(1.05);
+        }
+
+        .class-card i {
+            font-size: 2em;
+            color: #00ffff;
+            margin-bottom: 10px;
+            display: block;
+            text-shadow: 0 0 20px #00ffff;
+        }
+
+        .class-card span {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Books Section */
+        .books-section {
+            background: rgba(10, 15, 30, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.1);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
+            color: #00ffff;
+            text-shadow: 0 0 15px #00ffff;
+            letter-spacing: 2px;
+        }
+
+        .section-title i {
+            margin-right: 15px;
+            color: #ff00ff;
+        }
+
+        .book-count {
+            background: rgba(255, 0, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid #ff00ff;
+            color: #ff00ff;
+            font-weight: 600;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .book-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #00ffff;
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+        }
+
+        .book-card:hover::before {
+            left: 100%;
+        }
+
+        .book-icon {
+            font-size: 2.5em;
+            color: #00ffff;
+            margin-bottom: 15px;
+        }
+
+        .book-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+            padding-right: 30px;
+        }
+
+        .book-desc {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .book-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .book-link:hover {
+            background: #00ffff;
+            color: #0a0f1e;
+            box-shadow: 0 0 20px #00ffff;
+        }
+
+        .book-link i {
+            transition: transform 0.3s;
+        }
+
+        .book-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(10, 15, 30, 0.5);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 0, 255, 0.2);
+        }
+
+        .footer p {
+            color: #888;
+            margin: 5px 0;
+        }
+
+        .footer a {
+            color: #ff00ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        /* Loading Animation */
+        .loading {
+            text-align: center;
+            padding: 60px;
+            grid-column: 1/-1;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(0, 255, 255, 0.3);
+            border-top-color: #00ffff;
+            border-radius: 50%;
+            animation: spin 1s infinite linear;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .class-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .class-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>AI CLASSES</h1>
+            <h2>Maharashtra State Board Books (1st to 12th)</h2>
+            <div class="owner-badge">
+                <i class="fas fa-chalkboard-teacher"></i> Umesh Gawande
+            </div>
+        </div>
+
+        <!-- Class Grid -->
+        <div class="class-grid" id="classGrid"></div>
+
+        <!-- Books Section -->
+        <div class="books-section">
+            <div class="section-header">
+                <div class="section-title">
+                    <i class="fas fa-book-open"></i>
+                    <span id="selectedClassTitle">Class 1 Books</span>
+                </div>
+                <div class="book-count" id="bookCount">12 Books</div>
+            </div>
+            <div class="books-grid" id="booksContainer"></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 AI Classes | Created by Umesh Gawande</p>
+            <p>All books are property of Maharashtra State Board | Source: Maharashtra Books App</p>
+            <p><i class="fas fa-code"></i> Powered by AI Classes</p>
+        </div>
+    </div>
+
+    <script>
+        // Complete Books Data from Maharashtra Books App
+        const booksData = {
+            1: [
+                { title: "Marathi - Std 1", desc: "First Language (Balbharati)", icon: "fa-book" },
+                { title: "English - Std 1", desc: "English Medium", icon: "fa-language" },
+                { title: "Mathematics - Std 1", desc: "Basic Mathematics", icon: "fa-calculator" },
+                { title: "Environmental Studies - Std 1", desc: "EVS", icon: "fa-leaf" },
+                { title: "Drawing - Std 1", desc: "Art & Craft", icon: "fa-paint-brush" }
+            ],
+            2: [
+                { title: "Marathi - Std 2", desc: "First Language (Balbharati)", icon: "fa-book" },
+                { title: "English - Std 2", desc: "English Medium", icon: "fa-language" },
+                { title: "Mathematics - Std 2", desc: "Basic Mathematics", icon: "fa-calculator" },
+                { title: "Environmental Studies - Std 2", desc: "EVS", icon: "fa-leaf" },
+                { title: "Drawing - Std 2", desc: "Art & Craft", icon: "fa-paint-brush" }
+            ],
+            3: [
+                { title: "Marathi - Std 3", desc: "First Language", icon: "fa-book" },
+                { title: "Hindi - Std 3", desc: "Second Language", icon: "fa-language" },
+                { title: "English - Std 3", desc: "English Medium", icon: "fa-language" },
+                { title: "Mathematics - Std 3", desc: "Mathematics", icon: "fa-calculator" },
+                { title: "Environmental Studies - Std 3", desc: "EVS", icon: "fa-leaf" },
+                { title: "Drawing - Std 3", desc: "Art", icon: "fa-paint-brush" }
+            ],
+            4: [
+                { title: "Marathi - Std 4", desc: "First Language", icon: "fa-book" },
+                { title: "Hindi - Std 4", desc: "Second Language", icon: "fa-language" },
+                { title: "English - Std 4", desc: "English", icon: "fa-language" },
+                { title: "Mathematics - Std 4", desc: "Mathematics", icon: "fa-calculator" },
+                { title: "Environmental Studies - Std 4", desc: "EVS Part 1 & 2", icon: "fa-leaf" },
+                { title: "Drawing - Std 4", desc: "Art", icon: "fa-paint-brush" }
+            ],
+            5: [
+                { title: "Marathi - Std 5", desc: "First Language", icon: "fa-book" },
+                { title: "Hindi - Std 5", desc: "Second Language", icon: "fa-language" },
+                { title: "English - Std 5", desc: "English", icon: "fa-language" },
+                { title: "Mathematics - Std 5", desc: "Mathematics", icon: "fa-calculator" },
+                { title: "Environmental Studies - Std 5", desc: "EVS Part 1 & 2", icon: "fa-leaf" },
+                { title: "Drawing - Std 5", desc: "Art", icon: "fa-paint-brush" }
+            ],
+            6: [
+                { title: "Marathi - Std 6", desc: "First Language", icon: "fa-book" },
+                { title: "Hindi - Std 6", desc: "Second Language", icon: "fa-language" },
+                { title: "English - Std 6", desc: "English", icon: "fa-language" },
+                { title: "Mathematics - Std 6", desc: "Mathematics", icon: "fa-calculator" },
+                { title: "Science - Std 6", desc: "General Science", icon: "fa-flask" },
+                { title: "History & Civics - Std 6", desc: "Social Science", icon: "fa-landmark" },
+                { title: "Geography - Std 6", desc: "Geography", icon: "fa-globe" },
+                { title: "Sanskrit - Std 6", desc: "Sanskrit", icon: "fa-om" },
+                { title: "Drawing - Std 6", desc: "Art", icon: "fa-paint-brush" }
+            ],
+            7: [
+                { title: "Marathi - Std 7", desc: "First Language", icon: "fa-book" },
+                { title: "Hindi - Std 7", desc: "Second Language", icon: "fa-language" },
+                { title: "English - Std 7", desc: "English", icon: "fa-language" },
+                { title: "Mathematics - Std 7", desc: "Mathematics", icon: "fa-calculator" },
+                { title: "Science - Std 7", desc: "General Science", icon: "fa-flask" },
+                { title: "History & Civics - Std 7", desc: "Social Science", icon: "fa-landmark" },
+                { title: "Geography - Std 7", desc: "Geography", icon: "fa-globe" },
+                { title: "Sanskrit - Std 7", desc: "Sanskrit", icon: "fa-om" },
+                { title: "Drawing - Std 7", desc: "Art", icon: "fa-paint-brush" }
+            ],
+            8: [
+                { title: "Marathi - Std 8", desc: "First Language", icon: "fa-book" },
+                { title: "Hindi - Std 8", desc: "Second Language", icon: "fa-language" },
+                { title: "English - Std 8", desc: "English", icon: "fa-language" },
+                { title: "Mathematics - Std 8", desc: "Mathematics", icon: "fa-calculator" },
+                { title: "Science - Std 8", desc: "General Science", icon: "fa-flask" },
+                { title: "History & Civics - Std 8", desc: "Social Science", icon: "fa-landmark" },
+                { title: "Geography - Std 8", desc: "Geography", icon: "fa-globe" },
+                { title: "Sanskrit - Std 8", desc: "Sanskrit", icon: "fa-om" },
+                { title: "Drawing - Std 8", desc: "Art", icon: "fa-paint-brush" }
+            ],
+            9: [
+                { title: "Marathi - Std 9", desc: "Kumarbharati", icon: "fa-book" },
+                { title: "Hindi - Std 9", desc: "Lokbharati", icon: "fa-language" },
+                { title: "English - Std 9", desc: "Kumarbharati", icon: "fa-language" },
+                { title: "Mathematics Part 1 - Std 9", desc: "Algebra", icon: "fa-calculator" },
+                { title: "Mathematics Part 2 - Std 9", desc: "Geometry", icon: "fa-shapes" },
+                { title: "Science & Technology - Std 9", desc: "Science Part 1 & 2", icon: "fa-flask" },
+                { title: "History & Political Science - Std 9", desc: "History", icon: "fa-landmark" },
+                { title: "Geography - Std 9", desc: "Geography & Economics", icon: "fa-globe" },
+                { title: "Information Technology - Std 9", desc: "ICT", icon: "fa-laptop" }
+            ],
+            10: [
+                { title: "Marathi - Std 10", desc: "Kumarbharati", icon: "fa-book" },
+                { title: "Hindi - Std 10", desc: "Lokbharati", icon: "fa-language" },
+                { title: "English - Std 10", desc: "Kumarbharati", icon: "fa-language" },
+                { title: "Mathematics Part 1 - Std 10", desc: "Algebra", icon: "fa-calculator" },
+                { title: "Mathematics Part 2 - Std 10", desc: "Geometry", icon: "fa-shapes" },
+                { title: "Science & Technology Part 1 - Std 10", desc: "Physics/Chemistry", icon: "fa-flask" },
+                { title: "Science & Technology Part 2 - Std 10", desc: "Biology", icon: "fa-dna" },
+                { title: "History & Political Science - Std 10", desc: "History/Civics", icon: "fa-landmark" },
+                { title: "Geography - Std 10", desc: "Geography & Economics", icon: "fa-globe" }
+            ],
+            11: [
+                { title: "English - Std 11", desc: "Yuvakbharati", icon: "fa-language" },
+                { title: "Physics - Std 11", desc: "Science Stream", icon: "fa-atom" },
+                { title: "Chemistry - Std 11", desc: "Science Stream", icon: "fa-flask" },
+                { title: "Biology - Std 11", desc: "Science Stream", icon: "fa-dna" },
+                { title: "Mathematics & Statistics - Std 11", desc: "Part 1 & 2", icon: "fa-calculator" },
+                { title: "History - Std 11", desc: "Arts Stream", icon: "fa-landmark" },
+                { title: "Geography - Std 11", desc: "Arts Stream", icon: "fa-globe" },
+                { title: "Economics - Std 11", desc: "Arts/Commerce", icon: "fa-chart-line" },
+                { title: "Book Keeping & Accountancy - Std 11", desc: "Commerce", icon: "fa-file-invoice" }
+            ],
+            12: [
+                { title: "English - Std 12", desc: "Yuvakbharati", icon: "fa-language" },
+                { title: "Physics - Std 12", desc: "Science Stream", icon: "fa-atom" },
+                { title: "Chemistry - Std 12", desc: "Science Stream", icon: "fa-flask" },
+                { title: "Biology - Std 12", desc: "Science Stream", icon: "fa-dna" },
+                { title: "Mathematics & Statistics - Std 12", desc: "Part 1 & 2", icon: "fa-calculator" },
+                { title: "History - Std 12", desc: "Arts Stream", icon: "fa-landmark" },
+                { title: "Geography - Std 12", desc: "Arts Stream", icon: "fa-globe" },
+                { title: "Political Science - Std 12", desc: "Arts Stream", icon: "fa-gavel" },
+                { title: "Economics - Std 12", desc: "Arts/Commerce", icon: "fa-chart-line" },
+                { title: "Book Keeping & Accountancy - Std 12", desc: "Commerce", icon: "fa-file-invoice" },
+                { title: "Organization of Commerce - Std 12", desc: "Commerce", icon: "fa-building" }
+            ]
+        };
+
+        const classNames = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth"];
+        let currentClass = 1;
+
+        // Load Classes
+        function loadClasses() {
+            const classGrid = document.getElementById('classGrid');
+            classGrid.innerHTML = '';
+            
+            for (let i = 1; i <= 12; i++) {
+                const card = document.createElement('div');
+                card.className = `class-card ${i === currentClass ? 'active' : ''}`;
+                card.setAttribute('data-class', i);
+                card.onclick = () => selectClass(i);
+                
+                const icon = document.createElement('i');
+                icon.className = i <= 4 ? 'fas fa-child' : i <= 7 ? 'fas fa-user-graduate' : 'fas fa-user-tie';
+                
+                const span = document.createElement('span');
+                span.textContent = `${i}th`;
+                
+                card.appendChild(icon);
+                card.appendChild(span);
+                classGrid.appendChild(card);
+            }
+        }
+
+        // Select Class
+        function selectClass(classNum) {
+            currentClass = classNum;
+            
+            document.querySelectorAll('.class-card').forEach(card => {
+                card.classList.remove('active');
+                if (parseInt(card.getAttribute('data-class')) === classNum) {
+                    card.classList.add('active');
+                }
+            });
+
+            document.getElementById('selectedClassTitle').textContent = `Class ${classNum} (${classNames[classNum-1]}) Books`;
+            loadBooks(classNum);
+        }
+
+        // Load Books
+        function loadBooks(classNum) {
+            const container = document.getElementById('booksContainer');
+            const bookCount = document.getElementById('bookCount');
+            
+            container.innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading books...</p>
+                </div>
+            `;
+
+            setTimeout(() => {
+                const books = booksData[classNum] || [];
+                bookCount.textContent = `${books.length} Books`;
+                displayBooks(books);
+            }, 500);
+        }
+
+        // Display Books
+        function displayBooks(books) {
+            const container = document.getElementById('booksContainer');
+            
+            if (books.length === 0) {
+                container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 60px;">📚 No books available for this class</div>';
+                return;
+            }
+
+            container.innerHTML = '';
+            
+            books.forEach(book => {
+                const card = document.createElement('div');
+                card.className = 'book-card';
+                
+                card.innerHTML = `
+                    <div class="book-icon">
+                        <i class="fas ${book.icon}"></i>
+                    </div>
+                    <h3 class="book-title">${book.title}</h3>
+                    <p class="book-desc">${book.desc}</p>
+                    <a href="#" class="book-link" onclick="alert('PDF will be available soon! You can find this book in Maharashtra Books App.')">
+                        <span>View Book</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Initialize
+        loadClasses();
+        selectClass(1);
+    </script>
+</body>
+</html>
