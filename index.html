@@ -3,358 +3,490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Classes | 11th-12th Maharashtra Board Books</title>
+    <title>AI Classes | 11th-12th Maharashtra Board Books PDF Download</title>
+    
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: 'Rajdhani', sans-serif;
-            background: #0a0f1e;
-            color: #fff;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Animated Background */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(135deg, #0a0f1e 0%, #1a1f35 100%);
-        }
-
-        .particles::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
-            animation: pulseGlow 8s ease-in-out infinite;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.8; }
+            background: #f0f2f5;
+            min-height: 100vh;
         }
 
         /* Main Container */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
+        .main-container {
+            max-width: 1600px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 25px;
         }
 
-        /* Header with Neon Effect */
-        .header {
-            text-align: center;
-            padding: 40px 20px;
-            margin-bottom: 40px;
-            background: rgba(10, 15, 30, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 255, 0.2);
+        /* ========== PROFILE SIDEBAR ========== */
+        .profile-sidebar {
+            background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%);
             border-radius: 30px;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+            padding: 30px 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+            border: 1px solid rgba(46, 91, 255, 0.1);
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #2e5bff, #00c3ff);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(46, 91, 255, 0.3);
+        }
+
+        .profile-img i {
+            font-size: 65px;
+            color: white;
+        }
+
+        .profile-header h2 {
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e2b5a, #2e5bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .profile-header .title {
+            background: linear-gradient(135deg, #2e5bff, #00c3ff);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            margin: 10px 0 15px;
+            box-shadow: 0 5px 15px rgba(46, 91, 255, 0.3);
+        }
+
+        /* Info Cards */
+        .info-card {
+            background: white;
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border: 1px solid #eef2f7;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(46, 91, 255, 0.1);
+            border-color: #2e5bff;
+        }
+
+        .info-title {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-title i {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #2e5bff, #00c3ff);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .degree-badge {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .degree-badge i {
+            font-size: 24px;
+        }
+
+        .exp-badge {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 15px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .exp-badge .big-number {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2e5bff, #00c3ff);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-detail {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .contact-detail h4 {
+            font-size: 12px;
+            color: #888;
+            font-weight: 400;
+            margin-bottom: 2px;
+        }
+
+        .contact-detail p {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e2b5a;
+            word-break: break-word;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #2e5bff, #00c3ff);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        /* ========== MAIN CONTENT ========== */
+        .main-content {
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        /* Header */
+        .content-header {
+            background: linear-gradient(135deg, #1e2b5a, #2e5bff);
+            border-radius: 25px;
+            padding: 35px;
+            margin-bottom: 30px;
+            color: white;
             position: relative;
             overflow: hidden;
         }
 
-        .header::before {
+        .content-header::before {
             content: '';
             position: absolute;
             top: -50%;
-            left: -50%;
+            right: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(transparent, rgba(0, 255, 255, 0.3), transparent 30%);
-            animation: rotate 10s linear infinite;
-        }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            inset: 3px;
-            background: #0a0f1e;
-            border-radius: 28px;
-            z-index: -1;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
         }
 
         @keyframes rotate {
-            100% { transform: rotate(360deg); }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
-        .header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5em;
+        .content-header h1 {
+            font-size: 38px;
             font-weight: 800;
-            background: linear-gradient(45deg, #00ffff, #ff00ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            letter-spacing: 4px;
             margin-bottom: 10px;
-            animation: glitch 3s infinite;
-        }
-
-        @keyframes glitch {
-            2%, 64% { transform: skew(2deg, 1deg); }
-            4%, 60% { transform: skew(-2px, -1px); }
-            62% { transform: skew(0); }
-        }
-
-        .header h2 {
-            font-size: 1.5em;
-            color: #00ffff;
-            text-shadow: 0 0 10px #00ffff;
-            margin-bottom: 20px;
-        }
-
-        .owner-badge {
-            display: inline-block;
-            padding: 12px 40px;
-            background: rgba(255, 0, 255, 0.1);
-            border: 2px solid #ff00ff;
-            border-radius: 50px;
-            font-size: 1.2em;
-            font-weight: 600;
-            color: #ff00ff;
-            text-shadow: 0 0 10px #ff00ff;
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 255, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(255, 0, 255, 0.6); }
-        }
-
-        /* Class Selection - Only 2 classes */
-        .class-grid {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-        }
-
-        .class-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            border-radius: 30px;
-            padding: 30px 60px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            min-width: 250px;
+            z-index: 1;
         }
 
-        .class-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 30px;
-            background: linear-gradient(135deg, #00ffff, #ff00ff);
-            opacity: 0;
-            transition: opacity 0.4s;
-            z-index: -1;
+        .content-header p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
         }
 
-        .class-card:hover {
-            transform: translateY(-15px);
-            border-color: transparent;
+        .header-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
 
-        .class-card:hover::before {
-            opacity: 0.3;
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.15);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .class-card.active {
-            border: 2px solid #00ffff;
-            box-shadow: 0 0 40px #00ffff;
-            transform: scale(1.1);
+        .stat-item i {
+            font-size: 22px;
         }
 
-        .class-card i {
-            font-size: 4em;
-            color: #00ffff;
-            margin-bottom: 15px;
-            display: block;
-            text-shadow: 0 0 30px #00ffff;
+        /* Class Selection */
+        .class-selector {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 35px;
         }
 
-        .class-card span {
-            font-size: 2.5em;
-            font-weight: 800;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .class-btn {
+            flex: 1;
+            padding: 25px;
+            border: 2px solid #eef2f7;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
         }
 
-        .class-card small {
-            display: block;
-            color: #ff00ff;
-            font-size: 1.2em;
-            margin-top: 10px;
+        .class-btn.active {
+            border-color: #2e5bff;
+            background: linear-gradient(135deg, #f5f8ff, white);
+            box-shadow: 0 15px 35px rgba(46, 91, 255, 0.15);
+        }
+
+        .class-btn h3 {
+            font-size: 34px;
+            color: #1e2b5a;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .class-btn p {
+            color: #666;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .class-btn.active h3 {
+            color: #2e5bff;
         }
 
         /* Books Section */
         .books-section {
-            background: rgba(10, 15, 30, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            border-radius: 30px;
-            padding: 30px;
-            box-shadow: 0 0 50px rgba(0, 255, 255, 0.1);
+            margin-top: 30px;
         }
 
         .section-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+            margin-bottom: 25px;
             flex-wrap: wrap;
             gap: 15px;
         }
 
         .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5em;
-            color: #00ffff;
-            text-shadow: 0 0 15px #00ffff;
-            letter-spacing: 2px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #1e2b5a;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .section-title i {
-            margin-right: 15px;
-            color: #ff00ff;
+            color: #2e5bff;
+            font-size: 30px;
         }
 
         .book-count {
-            background: rgba(255, 0, 255, 0.2);
-            padding: 10px 30px;
+            background: linear-gradient(135deg, #2e5bff, #00c3ff);
+            color: white;
+            padding: 10px 25px;
             border-radius: 50px;
-            border: 1px solid #ff00ff;
-            color: #ff00ff;
+            font-size: 15px;
             font-weight: 600;
-            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(46, 91, 255, 0.2);
         }
 
         .books-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 25px;
         }
 
         .book-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(0, 255, 255, 0.1);
+            background: #f8faff;
             border-radius: 20px;
             padding: 25px;
-            transition: all 0.4s ease;
+            border: 1px solid #eef2f7;
+            transition: all 0.3s;
             position: relative;
-            overflow: hidden;
-        }
-
-        .book-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
-            transition: left 0.6s;
         }
 
         .book-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            border-color: #00ffff;
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
-        }
-
-        .book-card:hover::before {
-            left: 100%;
-        }
-
-        .book-icon {
-            font-size: 2.5em;
-            color: #00ffff;
-            margin-bottom: 15px;
-        }
-
-        .book-title {
-            font-size: 1.5em;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .book-desc {
-            color: #aaa;
-            font-size: 1em;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .book-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: transparent;
-            border: 1px solid #00ffff;
-            color: #00ffff;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            width: 100%;
-            justify-content: center;
-        }
-
-        .book-link:hover {
-            background: #00ffff;
-            color: #0a0f1e;
-            box-shadow: 0 0 20px #00ffff;
-        }
-
-        .book-link i {
-            transition: transform 0.3s;
-        }
-
-        .book-link:hover i {
-            transform: translateX(5px);
+            transform: translateY(-8px);
+            border-color: #2e5bff;
+            box-shadow: 0 20px 35px rgba(46, 91, 255, 0.15);
         }
 
         .stream-badge {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255, 0, 255, 0.3);
-            padding: 5px 15px;
+            top: 20px;
+            right: 20px;
+            padding: 6px 15px;
             border-radius: 30px;
-            font-size: 0.9em;
-            color: #ff00ff;
-            border: 1px solid #ff00ff;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(46, 91, 255, 0.1);
+            color: #2e5bff;
+            border: 1px solid rgba(46, 91, 255, 0.2);
+        }
+
+        .book-icon {
+            font-size: 45px;
+            color: #2e5bff;
+            margin-bottom: 18px;
+        }
+
+        .book-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e2b5a;
+            margin-bottom: 10px;
+            padding-right: 90px;
+            line-height: 1.4;
+        }
+
+        .book-desc {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .book-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .book-btn {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 15px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .view-btn {
+            background: white;
+            border: 1px solid #2e5bff;
+            color: #2e5bff;
+        }
+
+        .view-btn:hover {
+            background: #2e5bff;
+            color: white;
+        }
+
+        .download-btn {
+            background: #2e5bff;
+            border: 1px solid #2e5bff;
+            color: white;
+        }
+
+        .download-btn:hover {
+            background: #1a3fff;
+            gap: 12px;
         }
 
         /* Footer */
@@ -362,23 +494,16 @@
             text-align: center;
             margin-top: 50px;
             padding: 30px;
-            background: rgba(10, 15, 30, 0.5);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 0, 255, 0.2);
+            border-top: 2px solid #eef2f7;
+            color: #888;
         }
 
         .footer p {
-            color: #888;
             margin: 5px 0;
         }
 
-        .footer a {
-            color: #ff00ff;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-shadow: 0 0 10px #ff00ff;
+        .footer .heart {
+            color: #ff4d4d;
         }
 
         /* Loading Animation */
@@ -389,13 +514,13 @@
         }
 
         .loading-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(0, 255, 255, 0.3);
-            border-top-color: #00ffff;
+            width: 50px;
+            height: 50px;
+            border: 3px solid #eef2f7;
+            border-top-color: #2e5bff;
             border-radius: 50%;
-            animation: spin 1s infinite linear;
-            margin: 0 auto 20px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
         }
 
         @keyframes spin {
@@ -403,141 +528,229 @@
         }
 
         /* Responsive */
+        @media (max-width: 1200px) {
+            .main-container {
+                grid-template-columns: 340px 1fr;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-sidebar {
+                position: static;
+            }
+        }
+
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .class-card {
-                padding: 20px 40px;
-                min-width: 200px;
-            }
-            
-            .class-card i {
-                font-size: 3em;
-            }
-            
-            .class-card span {
-                font-size: 2em;
+            .class-selector {
+                flex-direction: column;
             }
             
             .books-grid {
                 grid-template-columns: 1fr;
             }
             
-            .section-title {
-                font-size: 1.8em;
+            .book-actions {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <div class="particles"></div>
-    
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1>AI CLASSES</h1>
-            <h2>Maharashtra Board Higher Secondary (11th & 12th)</h2>
-            <div class="owner-badge">
-                <i class="fas fa-chalkboard-teacher"></i> Umesh Gawande
-            </div>
-        </div>
-
-        <!-- Class Selection - Only 11 and 12 -->
-        <div class="class-grid" id="classGrid">
-            <div class="class-card active" onclick="selectClass(11)">
-                <i class="fas fa-graduation-cap"></i>
-                <span>11th</span>
-                <small>Junior College</small>
-            </div>
-            <div class="class-card" onclick="selectClass(12)">
-                <i class="fas fa-user-graduate"></i>
-                <span>12th</span>
-                <small>Senior College</small>
-            </div>
-        </div>
-
-        <!-- Books Section -->
-        <div class="books-section">
-            <div class="section-header">
-                <div class="section-title">
-                    <i class="fas fa-book-open"></i>
-                    <span id="selectedClassTitle">11th Standard Books</span>
+    <div class="main-container">
+        <!-- Left Sidebar - Profile -->
+        <div class="profile-sidebar">
+            <div class="profile-header">
+                <div class="profile-img">
+                    <i class="fas fa-chalkboard-teacher"></i>
                 </div>
-                <div class="book-count" id="bookCount">0 Books</div>
+                <h2>Umesh Gawande</h2>
+                <div class="title">Founder - AI Classes</div>
             </div>
-            <div class="books-grid" id="booksContainer"></div>
+
+            <!-- Education & Experience -->
+            <div class="info-card">
+                <div class="info-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Education</span>
+                </div>
+                <div class="degree-badge">
+                    <i class="fas fa-laptop-code"></i>
+                    B.E. Computer Engineering
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-title">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Experience</span>
+                </div>
+                <div class="exp-badge">
+                    <div class="big-number">4+ Years</div>
+                    <div>in IT Industry</div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="info-card">
+                <div class="info-title">
+                    <i class="fas fa-address-card"></i>
+                    <span>Contact</span>
+                </div>
+                
+                <!-- WhatsApp -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-detail">
+                        <h4>WhatsApp</h4>
+                        <p>+91 95616 21396</p>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="far fa-envelope"></i>
+                    </div>
+                    <div class="contact-detail">
+                        <h4>Email</h4>
+                        <p>umeshgawande3421@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://wa.me/919561621396" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:umeshgawande3421@gmail.com"><i class="far fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
         </div>
 
-        <!-- Footer -->
-        <div class="footer">
-            <p>© 2026 AI Classes | Created by Umesh Gawande</p>
-            <p>Based on Maharashtra State Board & Maharashtra Books App</p>
-            <p><i class="fas fa-code"></i> 11th & 12th Complete Collection</p>
+        <!-- Right Side - Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="content-header">
+                <h1>AI Classes</h1>
+                <p>Maharashtra State Board - 11th & 12th Books PDF Download</p>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-book"></i>
+                        <span>40+ Books</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-download"></i>
+                        <span>Direct PDF Download</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Free Access</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class Selector -->
+            <div class="class-selector">
+                <div class="class-btn active" onclick="selectClass(11)">
+                    <h3>11th</h3>
+                    <p>Junior College • All Streams</p>
+                </div>
+                <div class="class-btn" onclick="selectClass(12)">
+                    <h3>12th</h3>
+                    <p>Senior College • All Streams</p>
+                </div>
+            </div>
+
+            <!-- Books Section -->
+            <div class="books-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-book-open"></i>
+                        <span id="selectedClassTitle">11th Standard Books</span>
+                    </div>
+                    <div class="book-count" id="bookCount">20 Books</div>
+                </div>
+                <div class="books-grid" id="booksContainer">
+                    <!-- Books will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>© 2026 AI Classes | Created by Umesh Gawande (B.E. Computer Engineering)</p>
+                <p><i class="fas fa-code"></i> with <span class="heart">❤️</span> for Students | Maharashtra State Board Books</p>
+                <p>📱 WhatsApp: +91 95616 21396 | 📧 umeshgawande3421@gmail.com</p>
+            </div>
         </div>
     </div>
 
     <script>
-        // Only 11th and 12th Books Data (Based on Maharashtra State Board & Maharashtra Books App)
+        // Complete Books Data with PDF Download Links
+        // IMPORTANT: Replace the # with actual PDF URLs
         const booksData = {
             11: [
                 // Science Stream
-                { title: "Physics - 11th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-atom" },
-                { title: "Chemistry - 11th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-flask" },
-                { title: "Biology - 11th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-dna" },
-                { title: "Mathematics & Statistics - 11th Science", desc: "Part 1 & 2", stream: "Science", icon: "fa-calculator" },
+                { title: "Physics - 11th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-atom", pdfUrl: "https://www.ebalbharati.in/.../physics11.pdf" },
+                { title: "Chemistry - 11th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-flask", pdfUrl: "#" },
+                { title: "Biology - 11th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-dna", pdfUrl: "#" },
+                { title: "Mathematics & Statistics - 11th Science", desc: "Part 1 & 2", stream: "Science", icon: "fa-calculator", pdfUrl: "#" },
                 
                 // Arts Stream
-                { title: "History - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-landmark" },
-                { title: "Geography - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-globe" },
-                { title: "Political Science - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-gavel" },
-                { title: "Economics - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-chart-line" },
-                { title: "Sociology - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-users" },
-                { title: "Psychology - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-brain" },
+                { title: "History - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-landmark", pdfUrl: "#" },
+                { title: "Geography - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-globe", pdfUrl: "#" },
+                { title: "Political Science - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-gavel", pdfUrl: "#" },
+                { title: "Economics - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-chart-line", pdfUrl: "#" },
+                { title: "Sociology - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-users", pdfUrl: "#" },
                 
                 // Commerce Stream
-                { title: "Book Keeping & Accountancy - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-invoice" },
-                { title: "Organization of Commerce - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-building" },
-                { title: "Economics - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-chart-pie" },
-                { title: "Secretarial Practice - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-signature" },
+                { title: "Book Keeping & Accountancy - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-invoice", pdfUrl: "#" },
+                { title: "Organization of Commerce - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-building", pdfUrl: "#" },
+                { title: "Economics - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-chart-pie", pdfUrl: "#" },
+                { title: "Secretarial Practice - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-signature", pdfUrl: "#" },
                 
                 // Common Subjects
-                { title: "English - 11th (Yuvakbharati)", desc: "Common for All Streams", stream: "Common", icon: "fa-language" },
-                { title: "Marathi - 11th", desc: "First Language", stream: "Common", icon: "fa-book" },
-                { title: "Hindi - 11th", desc: "Second Language", stream: "Common", icon: "fa-language" },
-                { title: "Environmental Education - 11th", desc: "Common Subject", stream: "Common", icon: "fa-leaf" },
-                { title: "Information Technology - 11th", desc: "IT/Computer Science", stream: "Common", icon: "fa-laptop" }
+                { title: "English - 11th (Yuvakbharati)", desc: "Common for All Streams", stream: "Common", icon: "fa-language", pdfUrl: "#" },
+                { title: "Marathi - 11th", desc: "First Language", stream: "Common", icon: "fa-book", pdfUrl: "#" },
+                { title: "Hindi - 11th", desc: "Second Language", stream: "Common", icon: "fa-language", pdfUrl: "#" },
+                { title: "Environmental Education - 11th", desc: "Common Subject", stream: "Common", icon: "fa-leaf", pdfUrl: "#" },
+                { title: "Information Technology - 11th", desc: "IT/Computer Science", stream: "Common", icon: "fa-laptop", pdfUrl: "#" },
+                { title: "Physical Education - 11th", desc: "Health & Fitness", stream: "Common", icon: "fa-heartbeat", pdfUrl: "#" }
             ],
             
             12: [
                 // Science Stream
-                { title: "Physics - 12th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-atom" },
-                { title: "Chemistry - 12th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-flask" },
-                { title: "Biology - 12th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-dna" },
-                { title: "Mathematics & Statistics Part 1 - 12th Science", desc: "Algebra & Calculus", stream: "Science", icon: "fa-calculator" },
-                { title: "Mathematics & Statistics Part 2 - 12th Science", desc: "Geometry & Trigonometry", stream: "Science", icon: "fa-shapes" },
+                { title: "Physics - 12th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-atom", pdfUrl: "#" },
+                { title: "Chemistry - 12th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-flask", pdfUrl: "#" },
+                { title: "Biology - 12th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-dna", pdfUrl: "#" },
+                { title: "Mathematics & Statistics Part 1 - 12th Science", desc: "Algebra & Calculus", stream: "Science", icon: "fa-calculator", pdfUrl: "#" },
+                { title: "Mathematics & Statistics Part 2 - 12th Science", desc: "Geometry & Trigonometry", stream: "Science", icon: "fa-shapes", pdfUrl: "#" },
                 
                 // Arts Stream
-                { title: "History - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-landmark" },
-                { title: "Geography - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-globe" },
-                { title: "Political Science - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-gavel" },
-                { title: "Economics - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-chart-line" },
-                { title: "Sociology - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-users" },
-                { title: "Psychology - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-brain" },
+                { title: "History - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-landmark", pdfUrl: "#" },
+                { title: "Geography - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-globe", pdfUrl: "#" },
+                { title: "Political Science - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-gavel", pdfUrl: "#" },
+                { title: "Economics - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-chart-line", pdfUrl: "#" },
+                { title: "Sociology - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-users", pdfUrl: "#" },
                 
                 // Commerce Stream
-                { title: "Book Keeping & Accountancy - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-invoice" },
-                { title: "Organization of Commerce - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-building" },
-                { title: "Economics - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-chart-pie" },
-                { title: "Secretarial Practice - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-signature" },
+                { title: "Book Keeping & Accountancy - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-invoice", pdfUrl: "#" },
+                { title: "Organization of Commerce - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-building", pdfUrl: "#" },
+                { title: "Economics - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-chart-pie", pdfUrl: "#" },
+                { title: "Secretarial Practice - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-signature", pdfUrl: "#" },
                 
                 // Common Subjects
-                { title: "English - 12th (Yuvakbharati)", desc: "Common for All Streams", stream: "Common", icon: "fa-language" },
-                { title: "Marathi - 12th", desc: "First Language", stream: "Common", icon: "fa-book" },
-                { title: "Hindi - 12th", desc: "Second Language", stream: "Common", icon: "fa-language" },
-                { title: "Environmental Education - 12th", desc: "Common Subject", stream: "Common", icon: "fa-leaf" },
-                { title: "Information Technology - 12th", desc: "IT/Computer Science", stream: "Common", icon: "fa-laptop" }
+                { title: "English - 12th (Yuvakbharati)", desc: "Common for All Streams", stream: "Common", icon: "fa-language", pdfUrl: "#" },
+                { title: "Marathi - 12th", desc: "First Language", stream: "Common", icon: "fa-book", pdfUrl: "#" },
+                { title: "Hindi - 12th", desc: "Second Language", stream: "Common", icon: "fa-language", pdfUrl: "#" },
+                { title: "Environmental Education - 12th", desc: "Common Subject", stream: "Common", icon: "fa-leaf", pdfUrl: "#" },
+                { title: "Information Technology - 12th", desc: "IT/Computer Science", stream: "Common", icon: "fa-laptop", pdfUrl: "#" },
+                { title: "Physical Education - 12th", desc: "Health & Fitness", stream: "Common", icon: "fa-heartbeat", pdfUrl: "#" }
             ]
         };
 
@@ -547,15 +760,11 @@
         function selectClass(classNum) {
             currentClass = classNum;
             
-            // Update active class
-            document.querySelectorAll('.class-card').forEach((card, index) => {
-                if ((index === 0 && classNum === 11) || (index === 1 && classNum === 12)) {
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active');
-                }
-            });
-
+            // Update active buttons
+            const btns = document.querySelectorAll('.class-btn');
+            btns[0].classList.toggle('active', classNum === 11);
+            btns[1].classList.toggle('active', classNum === 12);
+            
             // Update title
             document.getElementById('selectedClassTitle').textContent = 
                 classNum === 11 ? '11th Standard Books (All Streams)' : '12th Standard Books (All Streams)';
@@ -583,12 +792,12 @@
             }, 500);
         }
 
-        // Display Books
+        // Display Books with Download Buttons
         function displayBooks(books) {
             const container = document.getElementById('booksContainer');
             
             if (books.length === 0) {
-                container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 60px;">📚 No books available for this class</div>';
+                container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 60px;">📚 No books available</div>';
                 return;
             }
 
@@ -599,13 +808,19 @@
                 card.className = 'book-card';
                 
                 // Stream badge color
-                let badgeColor = '#00ffff';
-                if (book.stream === 'Science') badgeColor = '#00ff88';
-                else if (book.stream === 'Arts') badgeColor = '#ff8800';
-                else if (book.stream === 'Commerce') badgeColor = '#ff00ff';
+                let badgeColor = '#2e5bff';
+                if (book.stream === 'Science') badgeColor = '#00c3ff';
+                else if (book.stream === 'Arts') badgeColor = '#f5576c';
+                else if (book.stream === 'Commerce') badgeColor = '#f093fb';
+                
+                // If PDF URL is #, show coming soon message
+                const pdfUrl = book.pdfUrl === '#' ? '#' : book.pdfUrl;
+                const downloadHandler = pdfUrl === '#' 
+                    ? `alert('📥 PDF will be available soon!\n\nPlease check ebalbharati.in for official PDFs.')` 
+                    : `window.open('${pdfUrl}', '_blank')`;
                 
                 card.innerHTML = `
-                    <div class="stream-badge" style="border-color: ${badgeColor}; color: ${badgeColor};">
+                    <div class="stream-badge" style="background: ${badgeColor}10; color: ${badgeColor}; border-color: ${badgeColor}30;">
                         ${book.stream}
                     </div>
                     <div class="book-icon">
@@ -613,10 +828,14 @@
                     </div>
                     <h3 class="book-title">${book.title}</h3>
                     <p class="book-desc">${book.desc}</p>
-                    <a href="#" class="book-link" onclick="alert('PDF will be available soon! You can find this book in Maharashtra Books App.\n\n📱 Download Maharashtra Books App from Play Store to read now.')">
-                        <span>View Book</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="book-actions">
+                        <a href="#" class="book-btn view-btn" onclick="event.preventDefault(); window.open('https://cart.ebalbharati.in/Balbooks/ebooks.aspx', '_blank');">
+                            <i class="fas fa-eye"></i> View Online
+                        </a>
+                        <a href="#" class="book-btn download-btn" onclick="event.preventDefault(); ${downloadHandler}">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
                 `;
                 
                 container.appendChild(card);
