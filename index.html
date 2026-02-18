@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Classes | Maharashtra State Board Books</title>
+    <title>AI Classes | 11th-12th Maharashtra Board Books</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -139,27 +139,27 @@
             50% { box-shadow: 0 0 40px rgba(255, 0, 255, 0.6); }
         }
 
-        /* Class Grid with 3D Cards */
+        /* Class Selection - Only 2 classes */
         .class-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
             margin-bottom: 50px;
-            perspective: 1000px;
+            flex-wrap: wrap;
         }
 
         .class-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 20px 10px;
+            border-radius: 30px;
+            padding: 30px 60px;
             text-align: center;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform-style: preserve-3d;
             position: relative;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            min-width: 250px;
         }
 
         .class-card::before {
@@ -169,7 +169,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            border-radius: 20px;
+            border-radius: 30px;
             background: linear-gradient(135deg, #00ffff, #ff00ff);
             opacity: 0;
             transition: opacity 0.4s;
@@ -177,7 +177,7 @@
         }
 
         .class-card:hover {
-            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            transform: translateY(-15px);
             border-color: transparent;
         }
 
@@ -187,24 +187,31 @@
 
         .class-card.active {
             border: 2px solid #00ffff;
-            box-shadow: 0 0 30px #00ffff;
-            transform: scale(1.05);
+            box-shadow: 0 0 40px #00ffff;
+            transform: scale(1.1);
         }
 
         .class-card i {
-            font-size: 2em;
+            font-size: 4em;
             color: #00ffff;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: block;
-            text-shadow: 0 0 20px #00ffff;
+            text-shadow: 0 0 30px #00ffff;
         }
 
         .class-card span {
-            font-size: 1.2em;
-            font-weight: 600;
+            font-size: 2.5em;
+            font-weight: 800;
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+        }
+
+        .class-card small {
+            display: block;
+            color: #ff00ff;
+            font-size: 1.2em;
+            margin-top: 10px;
         }
 
         /* Books Section */
@@ -224,11 +231,13 @@
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .section-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2em;
+            font-size: 2.5em;
             color: #00ffff;
             text-shadow: 0 0 15px #00ffff;
             letter-spacing: 2px;
@@ -241,16 +250,17 @@
 
         .book-count {
             background: rgba(255, 0, 255, 0.2);
-            padding: 8px 20px;
+            padding: 10px 30px;
             border-radius: 50px;
             border: 1px solid #ff00ff;
             color: #ff00ff;
             font-weight: 600;
+            font-size: 1.2em;
         }
 
         .books-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 25px;
         }
 
@@ -292,16 +302,15 @@
         }
 
         .book-title {
-            font-size: 1.3em;
+            font-size: 1.5em;
             font-weight: 600;
             color: #fff;
             margin-bottom: 10px;
-            padding-right: 30px;
         }
 
         .book-desc {
             color: #aaa;
-            font-size: 0.9em;
+            font-size: 1em;
             margin-bottom: 20px;
             line-height: 1.6;
         }
@@ -314,10 +323,12 @@
             border: 1px solid #00ffff;
             color: #00ffff;
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 10px;
+            padding: 12px 25px;
+            border-radius: 12px;
             font-weight: 600;
             transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
         }
 
         .book-link:hover {
@@ -332,6 +343,18 @@
 
         .book-link:hover i {
             transform: translateX(5px);
+        }
+
+        .stream-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 0, 255, 0.3);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9em;
+            color: #ff00ff;
+            border: 1px solid #ff00ff;
         }
 
         /* Footer */
@@ -366,9 +389,9 @@
         }
 
         .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(0, 255, 255, 0.3);
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(0, 255, 255, 0.3);
             border-top-color: #00ffff;
             border-radius: 50%;
             animation: spin 1s infinite linear;
@@ -385,25 +408,25 @@
                 font-size: 2em;
             }
             
-            .class-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
+            .class-card {
+                padding: 20px 40px;
+                min-width: 200px;
+            }
+            
+            .class-card i {
+                font-size: 3em;
+            }
+            
+            .class-card span {
+                font-size: 2em;
             }
             
             .books-grid {
                 grid-template-columns: 1fr;
             }
             
-            .section-header {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .class-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .section-title {
+                font-size: 1.8em;
             }
         }
     </style>
@@ -415,23 +438,34 @@
         <!-- Header -->
         <div class="header">
             <h1>AI CLASSES</h1>
-            <h2>Maharashtra State Board Books (1st to 12th)</h2>
+            <h2>Maharashtra Board Higher Secondary (11th & 12th)</h2>
             <div class="owner-badge">
                 <i class="fas fa-chalkboard-teacher"></i> Umesh Gawande
             </div>
         </div>
 
-        <!-- Class Grid -->
-        <div class="class-grid" id="classGrid"></div>
+        <!-- Class Selection - Only 11 and 12 -->
+        <div class="class-grid" id="classGrid">
+            <div class="class-card active" onclick="selectClass(11)">
+                <i class="fas fa-graduation-cap"></i>
+                <span>11th</span>
+                <small>Junior College</small>
+            </div>
+            <div class="class-card" onclick="selectClass(12)">
+                <i class="fas fa-user-graduate"></i>
+                <span>12th</span>
+                <small>Senior College</small>
+            </div>
+        </div>
 
         <!-- Books Section -->
         <div class="books-section">
             <div class="section-header">
                 <div class="section-title">
                     <i class="fas fa-book-open"></i>
-                    <span id="selectedClassTitle">Class 1 Books</span>
+                    <span id="selectedClassTitle">11th Standard Books</span>
                 </div>
-                <div class="book-count" id="bookCount">12 Books</div>
+                <div class="book-count" id="bookCount">0 Books</div>
             </div>
             <div class="books-grid" id="booksContainer"></div>
         </div>
@@ -439,171 +473,94 @@
         <!-- Footer -->
         <div class="footer">
             <p>© 2026 AI Classes | Created by Umesh Gawande</p>
-            <p>All books are property of Maharashtra State Board | Source: Maharashtra Books App</p>
-            <p><i class="fas fa-code"></i> Powered by AI Classes</p>
+            <p>Based on Maharashtra State Board & Maharashtra Books App</p>
+            <p><i class="fas fa-code"></i> 11th & 12th Complete Collection</p>
         </div>
     </div>
 
     <script>
-        // Complete Books Data from Maharashtra Books App
+        // Only 11th and 12th Books Data (Based on Maharashtra State Board & Maharashtra Books App)
         const booksData = {
-            1: [
-                { title: "Marathi - Std 1", desc: "First Language (Balbharati)", icon: "fa-book" },
-                { title: "English - Std 1", desc: "English Medium", icon: "fa-language" },
-                { title: "Mathematics - Std 1", desc: "Basic Mathematics", icon: "fa-calculator" },
-                { title: "Environmental Studies - Std 1", desc: "EVS", icon: "fa-leaf" },
-                { title: "Drawing - Std 1", desc: "Art & Craft", icon: "fa-paint-brush" }
-            ],
-            2: [
-                { title: "Marathi - Std 2", desc: "First Language (Balbharati)", icon: "fa-book" },
-                { title: "English - Std 2", desc: "English Medium", icon: "fa-language" },
-                { title: "Mathematics - Std 2", desc: "Basic Mathematics", icon: "fa-calculator" },
-                { title: "Environmental Studies - Std 2", desc: "EVS", icon: "fa-leaf" },
-                { title: "Drawing - Std 2", desc: "Art & Craft", icon: "fa-paint-brush" }
-            ],
-            3: [
-                { title: "Marathi - Std 3", desc: "First Language", icon: "fa-book" },
-                { title: "Hindi - Std 3", desc: "Second Language", icon: "fa-language" },
-                { title: "English - Std 3", desc: "English Medium", icon: "fa-language" },
-                { title: "Mathematics - Std 3", desc: "Mathematics", icon: "fa-calculator" },
-                { title: "Environmental Studies - Std 3", desc: "EVS", icon: "fa-leaf" },
-                { title: "Drawing - Std 3", desc: "Art", icon: "fa-paint-brush" }
-            ],
-            4: [
-                { title: "Marathi - Std 4", desc: "First Language", icon: "fa-book" },
-                { title: "Hindi - Std 4", desc: "Second Language", icon: "fa-language" },
-                { title: "English - Std 4", desc: "English", icon: "fa-language" },
-                { title: "Mathematics - Std 4", desc: "Mathematics", icon: "fa-calculator" },
-                { title: "Environmental Studies - Std 4", desc: "EVS Part 1 & 2", icon: "fa-leaf" },
-                { title: "Drawing - Std 4", desc: "Art", icon: "fa-paint-brush" }
-            ],
-            5: [
-                { title: "Marathi - Std 5", desc: "First Language", icon: "fa-book" },
-                { title: "Hindi - Std 5", desc: "Second Language", icon: "fa-language" },
-                { title: "English - Std 5", desc: "English", icon: "fa-language" },
-                { title: "Mathematics - Std 5", desc: "Mathematics", icon: "fa-calculator" },
-                { title: "Environmental Studies - Std 5", desc: "EVS Part 1 & 2", icon: "fa-leaf" },
-                { title: "Drawing - Std 5", desc: "Art", icon: "fa-paint-brush" }
-            ],
-            6: [
-                { title: "Marathi - Std 6", desc: "First Language", icon: "fa-book" },
-                { title: "Hindi - Std 6", desc: "Second Language", icon: "fa-language" },
-                { title: "English - Std 6", desc: "English", icon: "fa-language" },
-                { title: "Mathematics - Std 6", desc: "Mathematics", icon: "fa-calculator" },
-                { title: "Science - Std 6", desc: "General Science", icon: "fa-flask" },
-                { title: "History & Civics - Std 6", desc: "Social Science", icon: "fa-landmark" },
-                { title: "Geography - Std 6", desc: "Geography", icon: "fa-globe" },
-                { title: "Sanskrit - Std 6", desc: "Sanskrit", icon: "fa-om" },
-                { title: "Drawing - Std 6", desc: "Art", icon: "fa-paint-brush" }
-            ],
-            7: [
-                { title: "Marathi - Std 7", desc: "First Language", icon: "fa-book" },
-                { title: "Hindi - Std 7", desc: "Second Language", icon: "fa-language" },
-                { title: "English - Std 7", desc: "English", icon: "fa-language" },
-                { title: "Mathematics - Std 7", desc: "Mathematics", icon: "fa-calculator" },
-                { title: "Science - Std 7", desc: "General Science", icon: "fa-flask" },
-                { title: "History & Civics - Std 7", desc: "Social Science", icon: "fa-landmark" },
-                { title: "Geography - Std 7", desc: "Geography", icon: "fa-globe" },
-                { title: "Sanskrit - Std 7", desc: "Sanskrit", icon: "fa-om" },
-                { title: "Drawing - Std 7", desc: "Art", icon: "fa-paint-brush" }
-            ],
-            8: [
-                { title: "Marathi - Std 8", desc: "First Language", icon: "fa-book" },
-                { title: "Hindi - Std 8", desc: "Second Language", icon: "fa-language" },
-                { title: "English - Std 8", desc: "English", icon: "fa-language" },
-                { title: "Mathematics - Std 8", desc: "Mathematics", icon: "fa-calculator" },
-                { title: "Science - Std 8", desc: "General Science", icon: "fa-flask" },
-                { title: "History & Civics - Std 8", desc: "Social Science", icon: "fa-landmark" },
-                { title: "Geography - Std 8", desc: "Geography", icon: "fa-globe" },
-                { title: "Sanskrit - Std 8", desc: "Sanskrit", icon: "fa-om" },
-                { title: "Drawing - Std 8", desc: "Art", icon: "fa-paint-brush" }
-            ],
-            9: [
-                { title: "Marathi - Std 9", desc: "Kumarbharati", icon: "fa-book" },
-                { title: "Hindi - Std 9", desc: "Lokbharati", icon: "fa-language" },
-                { title: "English - Std 9", desc: "Kumarbharati", icon: "fa-language" },
-                { title: "Mathematics Part 1 - Std 9", desc: "Algebra", icon: "fa-calculator" },
-                { title: "Mathematics Part 2 - Std 9", desc: "Geometry", icon: "fa-shapes" },
-                { title: "Science & Technology - Std 9", desc: "Science Part 1 & 2", icon: "fa-flask" },
-                { title: "History & Political Science - Std 9", desc: "History", icon: "fa-landmark" },
-                { title: "Geography - Std 9", desc: "Geography & Economics", icon: "fa-globe" },
-                { title: "Information Technology - Std 9", desc: "ICT", icon: "fa-laptop" }
-            ],
-            10: [
-                { title: "Marathi - Std 10", desc: "Kumarbharati", icon: "fa-book" },
-                { title: "Hindi - Std 10", desc: "Lokbharati", icon: "fa-language" },
-                { title: "English - Std 10", desc: "Kumarbharati", icon: "fa-language" },
-                { title: "Mathematics Part 1 - Std 10", desc: "Algebra", icon: "fa-calculator" },
-                { title: "Mathematics Part 2 - Std 10", desc: "Geometry", icon: "fa-shapes" },
-                { title: "Science & Technology Part 1 - Std 10", desc: "Physics/Chemistry", icon: "fa-flask" },
-                { title: "Science & Technology Part 2 - Std 10", desc: "Biology", icon: "fa-dna" },
-                { title: "History & Political Science - Std 10", desc: "History/Civics", icon: "fa-landmark" },
-                { title: "Geography - Std 10", desc: "Geography & Economics", icon: "fa-globe" }
-            ],
             11: [
-                { title: "English - Std 11", desc: "Yuvakbharati", icon: "fa-language" },
-                { title: "Physics - Std 11", desc: "Science Stream", icon: "fa-atom" },
-                { title: "Chemistry - Std 11", desc: "Science Stream", icon: "fa-flask" },
-                { title: "Biology - Std 11", desc: "Science Stream", icon: "fa-dna" },
-                { title: "Mathematics & Statistics - Std 11", desc: "Part 1 & 2", icon: "fa-calculator" },
-                { title: "History - Std 11", desc: "Arts Stream", icon: "fa-landmark" },
-                { title: "Geography - Std 11", desc: "Arts Stream", icon: "fa-globe" },
-                { title: "Economics - Std 11", desc: "Arts/Commerce", icon: "fa-chart-line" },
-                { title: "Book Keeping & Accountancy - Std 11", desc: "Commerce", icon: "fa-file-invoice" }
+                // Science Stream
+                { title: "Physics - 11th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-atom" },
+                { title: "Chemistry - 11th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-flask" },
+                { title: "Biology - 11th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-dna" },
+                { title: "Mathematics & Statistics - 11th Science", desc: "Part 1 & 2", stream: "Science", icon: "fa-calculator" },
+                
+                // Arts Stream
+                { title: "History - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-landmark" },
+                { title: "Geography - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-globe" },
+                { title: "Political Science - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-gavel" },
+                { title: "Economics - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-chart-line" },
+                { title: "Sociology - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-users" },
+                { title: "Psychology - 11th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-brain" },
+                
+                // Commerce Stream
+                { title: "Book Keeping & Accountancy - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-invoice" },
+                { title: "Organization of Commerce - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-building" },
+                { title: "Economics - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-chart-pie" },
+                { title: "Secretarial Practice - 11th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-signature" },
+                
+                // Common Subjects
+                { title: "English - 11th (Yuvakbharati)", desc: "Common for All Streams", stream: "Common", icon: "fa-language" },
+                { title: "Marathi - 11th", desc: "First Language", stream: "Common", icon: "fa-book" },
+                { title: "Hindi - 11th", desc: "Second Language", stream: "Common", icon: "fa-language" },
+                { title: "Environmental Education - 11th", desc: "Common Subject", stream: "Common", icon: "fa-leaf" },
+                { title: "Information Technology - 11th", desc: "IT/Computer Science", stream: "Common", icon: "fa-laptop" }
             ],
+            
             12: [
-                { title: "English - Std 12", desc: "Yuvakbharati", icon: "fa-language" },
-                { title: "Physics - Std 12", desc: "Science Stream", icon: "fa-atom" },
-                { title: "Chemistry - Std 12", desc: "Science Stream", icon: "fa-flask" },
-                { title: "Biology - Std 12", desc: "Science Stream", icon: "fa-dna" },
-                { title: "Mathematics & Statistics - Std 12", desc: "Part 1 & 2", icon: "fa-calculator" },
-                { title: "History - Std 12", desc: "Arts Stream", icon: "fa-landmark" },
-                { title: "Geography - Std 12", desc: "Arts Stream", icon: "fa-globe" },
-                { title: "Political Science - Std 12", desc: "Arts Stream", icon: "fa-gavel" },
-                { title: "Economics - Std 12", desc: "Arts/Commerce", icon: "fa-chart-line" },
-                { title: "Book Keeping & Accountancy - Std 12", desc: "Commerce", icon: "fa-file-invoice" },
-                { title: "Organization of Commerce - Std 12", desc: "Commerce", icon: "fa-building" }
+                // Science Stream
+                { title: "Physics - 12th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-atom" },
+                { title: "Chemistry - 12th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-flask" },
+                { title: "Biology - 12th Science", desc: "Textbook for Science Stream", stream: "Science", icon: "fa-dna" },
+                { title: "Mathematics & Statistics Part 1 - 12th Science", desc: "Algebra & Calculus", stream: "Science", icon: "fa-calculator" },
+                { title: "Mathematics & Statistics Part 2 - 12th Science", desc: "Geometry & Trigonometry", stream: "Science", icon: "fa-shapes" },
+                
+                // Arts Stream
+                { title: "History - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-landmark" },
+                { title: "Geography - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-globe" },
+                { title: "Political Science - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-gavel" },
+                { title: "Economics - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-chart-line" },
+                { title: "Sociology - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-users" },
+                { title: "Psychology - 12th Arts", desc: "Textbook for Arts Stream", stream: "Arts", icon: "fa-brain" },
+                
+                // Commerce Stream
+                { title: "Book Keeping & Accountancy - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-invoice" },
+                { title: "Organization of Commerce - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-building" },
+                { title: "Economics - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-chart-pie" },
+                { title: "Secretarial Practice - 12th Commerce", desc: "Textbook for Commerce", stream: "Commerce", icon: "fa-file-signature" },
+                
+                // Common Subjects
+                { title: "English - 12th (Yuvakbharati)", desc: "Common for All Streams", stream: "Common", icon: "fa-language" },
+                { title: "Marathi - 12th", desc: "First Language", stream: "Common", icon: "fa-book" },
+                { title: "Hindi - 12th", desc: "Second Language", stream: "Common", icon: "fa-language" },
+                { title: "Environmental Education - 12th", desc: "Common Subject", stream: "Common", icon: "fa-leaf" },
+                { title: "Information Technology - 12th", desc: "IT/Computer Science", stream: "Common", icon: "fa-laptop" }
             ]
         };
 
-        const classNames = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth"];
-        let currentClass = 1;
+        let currentClass = 11;
 
-        // Load Classes
-        function loadClasses() {
-            const classGrid = document.getElementById('classGrid');
-            classGrid.innerHTML = '';
-            
-            for (let i = 1; i <= 12; i++) {
-                const card = document.createElement('div');
-                card.className = `class-card ${i === currentClass ? 'active' : ''}`;
-                card.setAttribute('data-class', i);
-                card.onclick = () => selectClass(i);
-                
-                const icon = document.createElement('i');
-                icon.className = i <= 4 ? 'fas fa-child' : i <= 7 ? 'fas fa-user-graduate' : 'fas fa-user-tie';
-                
-                const span = document.createElement('span');
-                span.textContent = `${i}th`;
-                
-                card.appendChild(icon);
-                card.appendChild(span);
-                classGrid.appendChild(card);
-            }
-        }
-
-        // Select Class
+        // Select Class Function
         function selectClass(classNum) {
             currentClass = classNum;
             
-            document.querySelectorAll('.class-card').forEach(card => {
-                card.classList.remove('active');
-                if (parseInt(card.getAttribute('data-class')) === classNum) {
+            // Update active class
+            document.querySelectorAll('.class-card').forEach((card, index) => {
+                if ((index === 0 && classNum === 11) || (index === 1 && classNum === 12)) {
                     card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
                 }
             });
 
-            document.getElementById('selectedClassTitle').textContent = `Class ${classNum} (${classNames[classNum-1]}) Books`;
+            // Update title
+            document.getElementById('selectedClassTitle').textContent = 
+                classNum === 11 ? '11th Standard Books (All Streams)' : '12th Standard Books (All Streams)';
+            
+            // Load books
             loadBooks(classNum);
         }
 
@@ -641,13 +598,22 @@
                 const card = document.createElement('div');
                 card.className = 'book-card';
                 
+                // Stream badge color
+                let badgeColor = '#00ffff';
+                if (book.stream === 'Science') badgeColor = '#00ff88';
+                else if (book.stream === 'Arts') badgeColor = '#ff8800';
+                else if (book.stream === 'Commerce') badgeColor = '#ff00ff';
+                
                 card.innerHTML = `
+                    <div class="stream-badge" style="border-color: ${badgeColor}; color: ${badgeColor};">
+                        ${book.stream}
+                    </div>
                     <div class="book-icon">
                         <i class="fas ${book.icon}"></i>
                     </div>
                     <h3 class="book-title">${book.title}</h3>
                     <p class="book-desc">${book.desc}</p>
-                    <a href="#" class="book-link" onclick="alert('PDF will be available soon! You can find this book in Maharashtra Books App.')">
+                    <a href="#" class="book-link" onclick="alert('PDF will be available soon! You can find this book in Maharashtra Books App.\n\n📱 Download Maharashtra Books App from Play Store to read now.')">
                         <span>View Book</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -657,9 +623,8 @@
             });
         }
 
-        // Initialize
-        loadClasses();
-        selectClass(1);
+        // Initialize with 11th class
+        selectClass(11);
     </script>
 </body>
 </html>
